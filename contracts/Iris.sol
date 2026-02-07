@@ -1,4 +1,6 @@
 // SPDX-License-Identifier: MIT
+// The Iris acts as a protective layer that consults the Lumiscan (Sonar) for any detected risks before allowing withdrawals.
+// If the Lumiscan signals a risk (like high volatility or a whale movement), the Iris engages its "shutter" to prevent any outflows, effectively securing the assets until the risk is mitigated.
 pragma solidity >=0.8.0 <0.9.0;
 
 interface ILumiscan {
