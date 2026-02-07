@@ -1,0 +1,22 @@
+import { ethers } from "hardhat";
+
+async function main() {
+  // CONFIGURATION - This is the address of the deployed Sonar contract (Lumiscan Core)
+  const LUMISCAN_CORE = "0xe700d221A7EBe788E95C3B0B954B4081141F04Ba"; 
+
+  console.log("Deploying IRIS (The Controlled Aperture)...");
+
+  const Iris = await ethers.getContractFactory("Iris");
+  const iris = await Iris.deploy(LUMISCAN_CORE);
+
+  await iris.waitForDeployment();
+
+  const address = await iris.getAddress();
+  console.log("IRIS Deployed to:", address);
+  console.log("Optic connected to:", LUMISCAN_CORE);
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});

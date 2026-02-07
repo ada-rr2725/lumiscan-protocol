@@ -18,25 +18,28 @@ contract Sonar {
         isRiskDetected = false;
     }
 
-    // This function is called by the Flare Data Connector when a relevant Bitcoin transaction is detected
+    // Flare FDC Trigger (Called by the FDC when a verified Bitcoin transaction matches our risk criteria)
     function triggerRiskAlert(
         IPayment.Proof calldata proof
     ) external {
-        // Verify the Bitcoin Transaction exists
-        // This checks if the proof is valid according to the Flare Data Connector
         bool isValid = ContractRegistry.getFdcVerification().verifyPayment(proof);
-        
         require(isValid, "FDC: Invalid Bitcoin Transaction Proof");
 
-        // Trigger the Circuit Breaker
         isRiskDetected = true;
         riskReason = "Whale Movement Verified on Bitcoin";
-        
+        emit RiskDetected(riskReason, block.timestamp);
+    }
+
+    // Admin Override (For Demo Purposes)
+    function triggerArtificialAlert() external {
+        require(msg.sender == owner, "Only owner can force alert");
+        isRiskDetected = true;
+        riskReason = "Manual Override: Zero-Day Exploit Detected";
         emit RiskDetected(riskReason, block.timestamp);
     }
 
     function resetSystem() external {
-        require(msg.sender == owner, "Only owner");
+        require(msg.sender == owner, "Only owner can reset system");
         isRiskDetected = false;
         riskReason = "";
         emit SystemReset();
