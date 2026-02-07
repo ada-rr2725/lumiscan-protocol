@@ -159,7 +159,7 @@ const config: HardhatUserConfig = {
         artifacts: "./artifacts",
     },
     typechain: {
-        target: "truffle-v5",
+        target: "ethers-v6",
     },
 };
 
