@@ -1,8 +1,8 @@
 import { ethers } from "hardhat";
 
 // --- CONFIGURATION ---
-const LUMISCAN_ADDR = "0xe700d221A7EBe788E95C3B0B954B4081141F04Ba";
-const IRIS_ADDR = "0x7D35B475dCba6B86C29F7399ca360E46A5eFf941"; 
+const LUMISCAN_ADDR = "0x85Ddd99FbA862e6d61382C112F39b8705aF12eb2";
+const IRIS_ADDR = "0x406235755Cac872E8a0e03174BCA2D154C105bFb"; 
 
 async function main() {
   const [user] = await ethers.getSigners();

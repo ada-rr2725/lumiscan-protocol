@@ -1,5 +1,4 @@
 import { ethers } from "hardhat";
-import { ContractRegistry } from "@flarenetwork/flare-periphery-contracts/coston2/ContractRegistry";
 
 // CONFIGURATION
 const SONAR_ADDRESS = "0xf389B1eceA74411E09941d5392e79693Ac4bfB05"; // Your deployed address

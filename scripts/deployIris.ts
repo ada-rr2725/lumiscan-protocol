@@ -2,7 +2,7 @@ import { ethers } from "hardhat";
 
 async function main() {
   // CONFIGURATION - This is the address of the deployed Sonar contract (Lumiscan Core)
-  const LUMISCAN_CORE = "0xe700d221A7EBe788E95C3B0B954B4081141F04Ba"; 
+  const LUMISCAN_CORE = "0x85Ddd99FbA862e6d61382C112F39b8705aF12eb2"; 
 
   console.log("Deploying IRIS (The Controlled Aperture)...");
 
