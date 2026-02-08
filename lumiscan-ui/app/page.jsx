@@ -236,7 +236,7 @@ export default function Home() {
                           <div>
                               <h3 className="text-xs font-bold text-white tracking-widest mb-1">THE IRIS MECHANISM</h3>
                               <p className="text-[11px] text-gray-400 leading-relaxed">
-                                  When market volatility breaches defined safety parameters, the "Iris" closes. This broadcasts an immediate pause signal to the Sonar Smart Contract, placing integrated protocols into a Protected State. By temporarily freezing high-risk actions—such as withdrawals, liquidations, or marketplace trades—the system prevents insolvency and arbitrage exploitation during periods of extreme price divergence, ensuring the economic integrity of the ecosystem remains intact.
+                                  When market volatility breaches defined safety parameters, the Sentinel detects the threat and triggers the Sonar Smart Contract. This broadcasts a network-wide 'Risk Detected' signal, causing the 'Iris' to immediately close on all integrated protocols. By pre-emptively freezing high-risk actions—such as withdrawals, liquidations, or marketplace trades—the system prevents insolvency and arbitrage exploitation during the critical 1.8s latency window, ensuring the economic integrity of the ecosystem remains intact.
                               </p>
                           </div>
                       </div>
