@@ -92,9 +92,13 @@ To navigate this repository:
 ## 06 // Flare Track Feedback (Technical Review)
 
 **Experience Building on Flare:**
-As postgraduate students in Applied Computational Science (Imperial College London), our focus was on the **Control Theory** of decentralized networks. While FTSO v2's 1.8s block time is a significant leap for on-chain price discovery, the FDC provides a unique 'Out-of-Band' attestation capability.
+As a postgraduate student in Applied Computational Science (Imperial College London), the focus was on the **Control Theory** of decentralized networks. While FTSO v2's ~1.8s block time is a significant leap for on-chain price discovery, the **Flare Data Connector (FDC)** provides the critical 'Out-of-Band' verification layer needed for trustless intervention.
 
-By treating the FDC as a high-frequency sensor and the FTSO as a state-settlement layer, we were able to implement a **Feed-Forward Control Loop** that is mathematically impossible on higher-latency networks. Lumiscan is the "Guardian" that ensures **Solvency** (Asset Backing) takes precedence over **Instant Liquidity** (Withdrawals) during black swan events.
+We designed a hybrid **Optimistic Control Loop**:
+1.  **High-Frequency Sensing:** An off-chain Sentinel detects volatility sub-second.
+2.  **Trustless Verification:** The FDC is used to cryptographically attest to these off-chain market conditions, proving that the Sentinel's intervention (closing the 'Iris') was valid.
+
+This architecture allows Lumiscan to react at **Web2 Speed** (milliseconds) while retaining **Web3 Trust** (FDC Verification), ensuring **Solvency** takes precedence over Instant Liquidity during periods of extreme volatility.
 
 ---
 
